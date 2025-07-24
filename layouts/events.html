@@ -1,0 +1,45 @@
+{{ define "main" }}
+  <!-- Events Page Title -->
+  <section id="events-header">
+    <div class="container">
+      <h1>环保活动</h1>
+      <p>探索我们过去和未来的环保活动，并了解如何参与其中。</p>
+    </div>
+  </section>
+
+  <!-- Event List -->
+  <section id="event-list">
+    <div class="container">
+      <h2>即将举行的活动</h2>
+      <div class="events-grid">
+        {{ range where .Site.Pages "Type" "events" }}
+          <div class="event-card">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="event-image" />
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="event-link">了解更多</a>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Past Events -->
+  <section id="past-events">
+    <div class="container">
+      <h2>过去的活动</h2>
+      <div class="events-grid">
+        {{ range where .Site.Pages "Type" "events" }}
+          {{ if lt .Date (now) }}
+            <div class="event-card">
+              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="event-image" />
+              <h3>{{ .Title }}</h3>
+              <p>{{ .Summary }}</p>
+              <a href="{{ .Permalink }}" class="event-link">查看活动详情</a>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

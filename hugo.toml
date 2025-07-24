@@ -1,3 +1,11 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://greenclub.vercel.app/"
+title = "Green Horizons Project"
+theme = "Green Horizons Project Website"
+languageCode = "en-ca"
+menu = [
+  { name = "main", url = "/" },
+  { name = "about", url = "/about/" },
+  { name = "event", url = "/events/" },
+  { name = "join", url = "/join/" },
+  { name = "contact", url = "/contact/" }
+]

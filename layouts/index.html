@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <!-- Banner Section -->
+  <section id="banner">
+    <div class="banner-content">
+      <h1>为地球，为未来</h1>
+      <p>Join us in protecting the environment and creating a sustainable future.</p>
+    </div>
+    <img src="{{ .Site.Params.bannerImage }}" alt="环保口号" class="banner-img" />
+  </section>
+
+  <!-- Organization Introduction -->
+  <section id="about">
+    <div class="container">
+      <h2>我们的使命</h2>
+      <p>{{ .Site.Params.mission }}</p>
+    </div>
+  </section>
+
+  <!-- Latest Events Section -->
+  <section id="latest-events">
+    <div class="container">
+      <h2>最新活动</h2>
+      <div class="events-grid">
+        {{ range first 3 .Pages }}
+          <div class="event-card">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="event-image" />
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="event-link">了解更多</a>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us Section -->
+  <section id="join-us">
+    <div class="container">
+      <h2>加入我们</h2>
+      <p>我们欢迎所有愿意为环保事业贡献力量的人加入我们的行列。</p>
+      <a href="/join" class="join-button">立即加入</a>
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,22 @@
+your-project/
+├── content/
+│   ├── about/
+│   │   ├── team.md          # 团队成员信息
+│   ├── events/
+│   │   ├── clean-ocean.md  # 每个活动的Markdown文件
+│   ├── join.md             # 加入我们页面内容
+│   ├── contact.md          # 联系我们页面内容
+├── layouts/
+│   ├── index.html          # 首页模板
+│   ├── about.html          # 关于我们模板
+│   ├── events.html         # 活动日志模板
+│   ├── join.html           # 加入我们模板
+│   ├── contact.html        # 联系我们模板
+├── static/
+│   ├── images/
+│   │   ├── events/         # 活动图片
+│   │   ├── team/           # 团队成员照片
+│   │   ├── qrcode/         # 二维码图片
+│   ├── css/                # 样式表
+│   ├── js/                 # JavaScript 文件
+├── hugo.toml             # 配置文件
